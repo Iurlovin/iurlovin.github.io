@@ -394,6 +394,63 @@
         grid-template-columns: repeat(2, 1fr);
       }
     }
+  
+    /* Кнопки соцсетей и резюме в шапке */
+    .header-contacts {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: -12px 0 30px 0;
+    }
+
+    .contact-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: #f8f9fa;
+      border: 1px solid #e2e2e2;
+      color: #111;
+      text-decoration: none;
+      padding: 7px 15px;
+      border-radius: 6px;
+      font-weight: 500;
+      font-size: 14px;
+      transition: all 0.15s ease;
+    }
+
+    .contact-btn:hover {
+      background: #111;
+      border-color: #111;
+      color: #fff;
+    }
+
+    .contact-btn:hover i {
+      color: #fff;
+    }
+
+    .contact-btn i {
+      color: #666;
+      font-size: 13px;
+      transition: color 0.15s ease;
+    }
+
+    .contact-btn.resume-btn {
+      background: #111;
+      border-color: #111;
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .contact-btn.resume-btn i {
+      color: #fff;
+    }
+
+    .contact-btn.resume-btn:hover {
+      background: #333;
+      border-color: #333;
+    }
+
   </style>
 </head>
 <body>
@@ -405,6 +462,13 @@
       <img src="../images/avatar.jpg" alt="Владимир Юрченко" class="profile-photo">
       <h1>Владимир Юрченко</h1>
       <h2 class="subtitle">Маркетолог</h2>
+
+      <div class="header-contacts">
+        <a href="../resume/" class="contact-btn resume-btn"><i class="fa-solid fa-file-lines"></i> Резюме</a>
+        <a href="https://t.me/" target="_blank" class="contact-btn"><i class="fa-brands fa-telegram"></i> @telegram</a>
+        <a href="mailto:" class="contact-btn"><i class="fa-solid fa-envelope"></i> Email</a>
+        <a href="https://hh.ru/" target="_blank" class="contact-btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> hh.ru</a>
+      </div>
 
       <p style="font-size: 19px; line-height: 29px; margin-bottom: 16px;">
         Я помогаю выстраивать системный маркетинг: связываю рекламу и каналы трафика с продажами.
