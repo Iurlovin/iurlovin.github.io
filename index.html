@@ -795,7 +795,7 @@
     let userInitiated = false;
 
     // Если вернулись назад из портфолио (кнопкой, скроллом вверх или "Назад" в браузере):
-    const cameFromPortfolio = document.referrer.includes('portfolio.html') || window.location.search.includes('from=portfolio');
+    const cameFromPortfolio = document.referrer.includes('portfolio') || window.location.search.includes('from=portfolio');
     if (cameFromPortfolio) {
       if ('scrollRestoration' in history) {
         history.scrollRestoration = 'manual';
@@ -831,7 +831,7 @@
         redirected = true;
         document.body.style.opacity = '0';
         setTimeout(() => {
-          window.location.href = 'portfolio.html';
+          window.location.href = 'portfolio/';
         }, 40);
       }
     }
@@ -839,7 +839,7 @@
     window.addEventListener('scroll', checkScrollRedirect, { passive: true });
 
     // Плавный переход по внутренним ссылкам
-    document.querySelectorAll('a[href*="portfolio.html"]').forEach(link => {
+    document.querySelectorAll('a[href*="portfolio"]').forEach(link => {
       link.addEventListener('click', (e) => {
         e.preventDefault();
         const targetUrl = link.href;

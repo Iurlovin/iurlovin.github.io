@@ -488,7 +488,7 @@
         <p style="font-size: 16px; color: #666; margin: 0;">Белгород • Готов к 100% удаленной работе в агентстве или компании</p>
       </div>
       <div class="contacts-list">
-        <a href="resume.html?from=portfolio"><i class="fa-solid fa-file-lines"></i> Резюме (веб-версия)</a>
+        <a href="resume/"><i class="fa-solid fa-file-lines"></i> Резюме</a>
         <a href="https://t.me/" target="_blank"><i class="fa-brands fa-telegram"></i> @telegram</a>
         <a href="mailto:"><i class="fa-solid fa-envelope"></i> Email</a>
         <a href="https://hh.ru/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> hh.ru</a>
@@ -516,7 +516,7 @@
           upScrollAccumulator = 0;
           document.body.style.opacity = '0';
           setTimeout(() => {
-            window.location.href = 'resume.html?from=portfolio';
+            window.location.href = 'resume/';
           }, 40);
         }
       } else {
@@ -525,7 +525,7 @@
     }, { passive: true });
 
     // Плавный переход по ссылкам на резюме без рывков
-    document.querySelectorAll('a[href*="resume.html"]').forEach(link => {
+    document.querySelectorAll('a[href*="resume"]').forEach(link => {
       link.addEventListener('click', (e) => {
         e.preventDefault();
         const targetUrl = link.href;

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Резюме — Владимир Юрченко</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    @view-transition {
+      navigation: auto;
+    }
+
+    ::view-transition-old(root),
+    ::view-transition-new(root) {
+      animation-duration: 0.08s;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    @keyframes pageFadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      color: #111111;
+      font-family: 'Golos Text', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+      animation: pageFadeIn 0.08s ease-out;
+      transition: opacity 0.06s ease;
+    }
+
+    a {
+      transition: color 0.2s ease, opacity 0.2s ease, text-decoration-color 0.2s ease;
+    }
+
+    .resume-section {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 50px 24px 60px;
+      font-family: 'Golos Text', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+
+    .header {
+      margin-bottom: 32px;
+    }
+
+    .profile-img {
+      width: 84px;
+      height: 84px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 16px;
+      display: block;
+      background: #eaeaea;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .resume-section h1 {
+      font-size: 34px;
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin: 0 0 6px 0;
+      color: #000;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      color: #555;
+      margin: 0 0 16px 0;
+    }
+
+    .contacts-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 15px;
+      color: #555;
+      margin-bottom: 24px;
+    }
+
+    .contacts-row a {
+      color: #0044cc;
+      text-decoration: underline;
+      text-decoration-color: rgba(0, 68, 204, 0.3);
+      text-underline-offset: 3px;
+    }
+
+    .contacts-row a:hover {
+      color: #d94000;
+    }
+
+    .about-text {
+      font-size: 16.5px;
+      line-height: 26px;
+      color: #333;
+      margin: 0 0 36px 0;
+    }
+
+    .resume-section h2 {
+      font-size: 26px;
+      font-weight: 700;
+      color: #777;
+      letter-spacing: -0.015em;
+      margin: 48px 0 18px 0;
+    }
+
+    .job-item, .edu-item {
+      margin-bottom: 32px;
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-bottom: 4px;
+    }
+
+    .resume-section h3 {
+      font-size: 19px;
+      font-weight: 700;
+      margin: 0;
+      color: #000;
+    }
+
+    .job-company {
+      font-size: 15px;
+      font-weight: 600;
+      color: #444;
+      margin-bottom: 6px;
+    }
+
+    .company-desc {
+      font-size: 14.5px;
+      color: #555;
+      line-height: 1.5;
+      margin: 0 0 12px 0;
+    }
+
+    .job-dates {
+      font-size: 14px;
+      color: #888;
+      font-weight: normal;
+    }
+
+    .resume-section ul {
+      margin: 8px 0 0 0;
+      padding-left: 20px;
+    }
+
+    .resume-section li {
+      font-size: 15.5px;
+      line-height: 24px;
+      color: #222;
+      margin-bottom: 12px;
+    }
+
+    .resume-section li:last-child {
+      margin-bottom: 0;
+    }
+
+    .edu-meta {
+      font-size: 15px;
+      color: #444;
+      margin-bottom: 6px;
+    }
+
+    .edu-desc {
+      font-size: 15px;
+      color: #666;
+      margin: 0;
+      line-height: 22px;
+    }
+
+    .hobbies-list {
+      list-style-type: none;
+      padding-left: 0 !important;
+    }
+
+    .hobbies-list li {
+      position: relative;
+      padding-left: 18px;
+      margin-bottom: 8px;
+    }
+
+    .hobbies-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #888;
+    }
+
+    .portfolio-link-card {
+      margin-top: 48px;
+      padding: 24px 28px;
+      background: #f8f9fa;
+      border: 1px solid #eaeaea;
+      border-radius: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .portfolio-link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      background: #111;
+      color: #ffffff !important;
+      text-decoration: none !important;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 14.5px;
+      transition: background 0.15s ease;
+    }
+
+    .portfolio-link-btn:hover {
+      background: #0044cc;
+    }
+
+    @media print {
+      .resume-section {
+        padding: 0;
+        max-width: 100%;
+      }
+      .portfolio-link-card {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="resume-section" id="resumeSection">
+    
+    <div class="header">
+      <img src="../images/avatar.jpg" alt="Владимир Юрченко" class="profile-img">
+      <h1>Владимир Юрченко</h1>
+      <p class="subtitle">Маркетолог</p>
+
+      <div class="contacts-row">
+        <a href="https://t.me/" target="_blank">Telegram</a>
+        <span>•</span>
+        <a href="mailto:">Email</a>
+        <span>•</span>
+        <a href="https://hh.ru/" target="_blank">hh.ru</a>
+      </div>
+    </div>
+
+    <!-- Обо мне -->
+    <p class="about-text">
+      Маркетолог с продуктовым и аналитическим уклоном. Оцифровываю клиентский путь: умею слушать звонки, вытаскивать скрытые боли и находить точки слива рекламного бюджета. В работе сочетаю строгий фактчекинг и доказательный подход с сильной редактурой в инфостиле.
+    </p>
+
+    <!-- Опыт работы -->
+    <h2>Опыт работы</h2>
+
+    <!-- Авто Молл Белгородский -->
+    <div class="job-item">
+      <div class="job-header">
+        <h3>Младший маркетолог</h3>
+        <span class="job-dates">Июнь 2025 — Ноябрь 2026 (1 год и 6 месяцев)</span>
+      </div>
+      <div class="job-company">Авто Молл Белгородский</div>
+      <p class="company-desc">Крупный региональный автотехцентр и розничный магазин автозапчастей: техобслуживание, диагностика, слесарный и кузовной ремонт легковых и коммерческих автомобилей.</p>
+      <ul>
+        <li><strong>Управление репутацией на Яндекс Картах:</strong> поднял средний рейтинг с <strong>4.4 до 4.7</strong> и вывел компанию на <strong>1-е место в Белгороде среди 172 конкурентов</strong> со статусом «Хорошее место». Написал скрипт обзвона и автоматизировал сборку: плюс 2–3 новых отзыва в день без участия персонала; удалял негатив через модерацию Яндекс Бизнеса.</li>
+        <li><strong>Контент и продажи во Вконтакте:</strong> привлёк <strong>240 000 ₽ выручки без рекламного бюджета</strong> в пиковый месяц против 0 ₽ годом ранее. Заменил шаблонный автопостинг на регулярные живые кейсы из цеха — слесарный и кузовной ремонт — с призывом записываться на диагностику или консультацию.</li>
+        <li><strong>Маркетинговые исследования и аудит воронки:</strong> оцифровал точку потери выручки — доказал, что компания теряет <strong>80–85% входящих клиентов</strong> на этапе первичного звонка. Слушал записи в Битрикс24 и Авито, провёл глубокий анализ 5 ключевых конкурентов города по 20+ критериям: ценообразование, сервис, гарантии и программы лояльности.</li>
+        <li><strong>Продвижение на Авито и посадочные страницы:</strong> удерживал привлечение лидов в рамках <strong>жёсткого лимита без перерасхода бюджета</strong> и обеспечил конверсию мультиканального трафика в Битрикс24. Оптимизировал выдачу и инфографику на Авито, создавал посадочные страницы под китайские и коммерческие автомобили с внедрением поисковых ключей.</li>
+      </ul>
+    </div>
+
+    <!-- Частная практика -->
+    <div class="job-item">
+      <div class="job-header">
+        <h3>Копирайтер и UX-автор</h3>
+        <span class="job-dates">Апрель 2025 — Май 2025 (2 месяца)</span>
+      </div>
+      <div class="job-company">Частная практика</div>
+      <ul>
+        <li><strong>Поисковое продвижение и экспертные статьи:</strong> написал более 15 лонгридов для блогов и интернет-магазинов в сфере медицины и фармацевтики. За счёт фактчекинга по доказательной медицине и грамотной семантики вывел материалы в топ-5 поисковой выдачи Яндекса без закупки платных ссылок.</li>
+        <li><strong>Прототипирование и структура сайтов:</strong> разработал смысловую структуру и прототипы для 4 коммерческих сайтов в сфере B2B и розницы: оптовая продажа силового кабеля, туристическая одежда, грузоперевозки и монтаж натяжных потолков. Выстроил логичный путь клиента от потребности к целевому действию и защитил структуру перед заказчиками без правок.</li>
+        <li><strong>Email-маркетинг в сегменте B2B:</strong> разработал серию рассылок для завода противопожарных дверей: приветственную цепочку для новых партнёров, экспертные письма по нормам пожарной безопасности и акционные спецпредложения. Сформировал канал прямых повторных продаж для застройщиков и монтажных организаций.</li>
+        <li><strong>Презентации и коммерческие предложения:</strong> создавал структуру, тезисы и вёрстку презентаций для B2B-клиентов. Помог малому бизнесу понятно упаковать сложные услуги и коммерческие предложения, что позволило заказчикам успешно закрыть первичные переговоры.</li>
+      </ul>
+    </div>
+
+    <!-- Образование -->
+    <h2>Образование</h2>
+
+    <div class="edu-item">
+      <div class="job-header">
+        <h3>БУКЭП (Белгородский университет кооперации, экономики и права)</h3>
+        <span class="job-dates">2022 — 2027</span>
+      </div>
+      <div class="edu-meta"><strong>Реклама и связи с общественностью</strong> (Высшее, бакалавриат)</div>
+      <p class="edu-desc">Маркетинговые исследования, медиапланирование, расчет рекламных бюджетов, связи с общественностью и выбор каналов продвижения.</p>
+    </div>
+
+    <div class="edu-item">
+      <div class="job-header">
+        <h3>Медицинский колледж НИУ «БелГУ»</h3>
+        <span class="job-dates">2010 — 2014</span>
+      </div>
+      <div class="edu-meta"><strong>Фармация</strong> (Фармацевт)</div>
+      <p class="edu-desc">Профессиональное знание фармации и доказательной медицины, терминология, работа со сложными спецификациями.</p>
+    </div>
+
+    <!-- Интересы -->
+    <h2>Интересы и кругозор</h2>
+    <ul class="hobbies-list">
+      <li>Фотография (съемка в RAW, постобработка)</li>
+      <li>Иммерсивные RPG и симуляторы</li>
+      <li>История Средневековья и Восточной Европы</li>
+      <li>Коллекционирование редкого неофолка</li>
+      <li>ИИ-агенты и автоматизация рабочих процессов</li>
+    </ul>
+
+    <!-- Карточка перехода в портфолио -->
+    <div class="portfolio-link-card">
+      <div>
+        <div style="font-weight: 700; font-size: 17px; margin-bottom: 4px; color: #111;">Кейсы и портфолио</div>
+        <div style="font-size: 14.5px; color: #666;">Посмотрите подробные результаты с метриками, выручкой и воронками.</div>
+      </div>
+      <a href="../portfolio/" class="portfolio-link-btn">Смотреть портфолио →</a>
+    </div>
+
+  </section>
+
+  <script>
+    document.querySelectorAll('a[href*="portfolio"]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetUrl = link.href;
+        document.body.style.opacity = '0';
+        setTimeout(() => {
+          window.location.href = targetUrl;
+        }, 40);
+      });
+    });
+  </script>
+
+</body>
+</html>
