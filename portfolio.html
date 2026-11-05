@@ -318,6 +318,78 @@
         align-items: flex-start;
       }
     }
+  
+    /* Разделитель и превью детального кейса */
+    .okko-separator {
+      max-width: 1160px;
+      margin: 60px auto 40px;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .okko-separator::before {
+      content: "";
+      display: block;
+      height: 1px;
+      background: #eaeaea;
+    }
+
+    .case-section {
+      padding-top: 20px;
+      padding-bottom: 60px;
+    }
+
+    .meta-tags {
+      margin-bottom: 20px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #f0f0f0;
+      padding: 5px 12px;
+      border-radius: 4px;
+      font-size: 13px;
+      font-weight: 500;
+      margin-right: 8px;
+      margin-bottom: 8px;
+      color: #555;
+    }
+
+    .case-preview-metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .preview-metric-box {
+      background: #f8f9fa;
+      border: 1px solid #eaeaea;
+      padding: 22px 20px;
+      border-radius: 8px;
+    }
+
+    .metric-num {
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 8px;
+      color: #000;
+      letter-spacing: -0.02em;
+    }
+
+    .metric-desc {
+      font-size: 13px;
+      color: #666;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 768px) {
+      .case-preview-metrics {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -393,9 +465,9 @@
       <div class="cases-grid-two">
 
         <!-- Карточка: Геосервисы и SERM -->
-        <div class="case-card">
-          <div class="case-tag">SERM & Геомаркетинг</div>
-          <h3 class="card-title">Рост рейтинга с 4.4 до 4.7 на Яндекс Картах</h3>
+        <div class="case-card" onclick="window.location.href='case/';" style="cursor: pointer;">
+          <div class="case-tag">SERM & Геомаркетинг • Детальный кейс</div>
+          <h3 class="card-title"><a href="case/" style="color: inherit; text-decoration: none;">Рост рейтинга с 4.4 до 4.7 на Яндекс Картах →</a></h3>
 
           <ul class="case-bullets">
             <li>Изучил жалобы клиентов и оспорил старый нерелевантный негатив через поддержку Яндекса.</li>
@@ -404,8 +476,9 @@
             <li><strong>Итог:</strong> автосервис получает по 2–3 новых отзыва в день на автопилоте, подняв рейтинг до 4.7.</li>
           </ul>
 
-          <div class="case-footer-metric">
+          <div class="case-footer-metric" style="display: flex; justify-content: space-between; align-items: center;">
             <span>▲ 4.7 средняя оценка на картах</span>
+            <span style="font-weight: 600; color: #0044cc;">Детализация кейса →</span>
           </div>
         </div>
 
@@ -495,15 +568,54 @@
       </div>
     </div>
 
+    <!-- Тонкий разделитель перед детализацией кейса -->
+    <div class="okko-separator"></div>
+
+    <!-- Слой перехода в детализацию кейса -->
+    <section class="case-section" id="caseSection">
+      <div class="meta-tags">
+        <span class="tag">ORM & Рейтинг</span>
+        <span class="tag">Яндекс Карты</span>
+        <span class="tag">Автобизнес</span>
+      </div>
+
+      <h2 style="font-family: 'Golos Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-weight: 700; font-size: 34px; line-height: 1.2; margin: 0 0 18px 0; letter-spacing: -0.02em; color: #000;">
+        Как система сбора отзывов подняла автосервис на #1 место среди 172 конкурентов
+      </h2>
+
+      <p style="font-size: 18px; color: #444; line-height: 1.6; max-width: 860px; margin: 0 0 30px 0;">
+        Мы выстроили систему работы с отзывами для автотехцентра: подняли рейтинг с 4.5 до 4.7, нарастили базу оценок с ~500 до 1 760, получили награду «Хорошее место» и обошли федеральную сеть Fit Service. Сейчас у автосервиса самая крупная база отзывов среди всех конкурентов региона.
+      </p>
+
+      <div class="case-preview-metrics">
+        <div class="preview-metric-box">
+          <div class="metric-num">4.5 → 4.7</div>
+          <div class="metric-desc">Рейтинг<br>на Яндекс Картах</div>
+        </div>
+        <div class="preview-metric-box">
+          <div class="metric-num">×3.5</div>
+          <div class="metric-desc">Рост базы: с ~500<br>до 1 760 оценок</div>
+        </div>
+        <div class="preview-metric-box">
+          <div class="metric-num">#1</div>
+          <div class="metric-desc">Место среди 172<br>конкурентов — 16% рынка</div>
+        </div>
+        <div class="preview-metric-box">
+          <div class="metric-num">~610</div>
+          <div class="metric-desc">Новых отзывов<br>собрано за год</div>
+        </div>
+      </div>
+    </section>
+
   </div>
 
   <script>
-    // Возврат в резюме только при осознанном прокручивании колеса вверх на пол-оборота (~550px)
+    // 1. Возврат в резюме только при осознанном прокручивании колеса вверх (~550px)
     let upScrollAccumulator = 0;
     let upScrollTimer = null;
 
     window.addEventListener('wheel', (e) => {
-      // Срабатывает только когда читатель уже на самом верху страницы и продолжает крутить колесо вверх
+      userInitiated = true;
       if (window.scrollY <= 0 && e.deltaY < 0) {
         upScrollAccumulator += Math.abs(e.deltaY);
         clearTimeout(upScrollTimer);
@@ -511,7 +623,6 @@
           upScrollAccumulator = 0;
         }, 600);
 
-        // Порог 550px — это 5–6 уверенных щелчков (примерно пол-оборота колеса мыши)
         if (upScrollAccumulator >= 550) {
           upScrollAccumulator = 0;
           document.body.style.opacity = '0';
@@ -524,9 +635,48 @@
       }
     }, { passive: true });
 
-    // Плавный переход по ссылкам на резюме без рывков
-    document.querySelectorAll('a[href*="resume"]').forEach(link => {
+    // 2. Бесшовный скролл вниз в детализацию кейса
+    const caseSec = document.getElementById('caseSection');
+    let redirectedDown = false;
+    let lastScrollY = window.scrollY;
+    let userInitiated = false;
+
+    // Если пришли из case (например, скроллом вверх): блокируем ложный мгновенный переход
+    const cameFromCase = document.referrer.includes('case') || window.location.search.includes('from=case');
+    if (cameFromCase) {
+      redirectedDown = true;
+      setTimeout(() => {
+        redirectedDown = false;
+      }, 1200);
+    }
+
+    window.addEventListener('touchmove', () => { userInitiated = true; }, { passive: true });
+    window.addEventListener('keydown', (e) => {
+      if (['ArrowDown', 'PageDown', 'Space'].includes(e.code)) userInitiated = true;
+    });
+
+    function checkScrollRedirect() {
+      if (redirectedDown || !caseSec) return;
+      const currentScrollY = window.scrollY;
+      const isScrollingDown = currentScrollY > lastScrollY;
+      lastScrollY = currentScrollY;
+
+      const rect = caseSec.getBoundingClientRect();
+      if (userInitiated && isScrollingDown && rect.top <= 140) {
+        redirectedDown = true;
+        document.body.style.opacity = '0';
+        setTimeout(() => {
+          window.location.href = 'case/';
+        }, 40);
+      }
+    }
+
+    window.addEventListener('scroll', checkScrollRedirect, { passive: true });
+
+    // Плавный переход по кликам на ссылки
+    document.querySelectorAll('a[href*="resume"], a[href*="case"]').forEach(link => {
       link.addEventListener('click', (e) => {
+        if (link.getAttribute('target') === '_blank') return;
         e.preventDefault();
         const targetUrl = link.href;
         document.body.style.opacity = '0';
