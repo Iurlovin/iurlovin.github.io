@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Резюме — Владимир Юрченко</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    @view-transition {
+      navigation: auto;
+    }
+
+    ::view-transition-old(root),
+    ::view-transition-new(root) {
+      animation-duration: 0.08s;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    @keyframes pageFadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      color: #111111;
+      font-family: 'Golos Text', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+      animation: pageFadeIn 0.08s ease-out;
+      transition: opacity 0.06s ease;
+    }
+
+    a {
+      transition: color 0.2s ease, opacity 0.2s ease, text-decoration-color 0.2s ease;
+    }
+
+    /* =========================================
+       СЕКЦИЯ РЕЗЮМЕ (Колонка 720px)
+       ========================================= */
+    .resume-section {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 50px 24px 30px;
+      font-family: 'Golos Text', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+
+    .header {
+      margin-bottom: 32px;
+    }
+
+    .profile-img {
+      width: 84px;
+      height: 84px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 16px;
+      display: block;
+      background: #eaeaea;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .resume-section h1 {
+      font-size: 34px;
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin: 0 0 6px 0;
+      color: #000;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      color: #555;
+      margin: 0 0 16px 0;
+    }
+
+    .contacts-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 15px;
+      color: #555;
+      margin-bottom: 24px;
+    }
+
+    .contacts-row a {
+      color: #0044cc;
+      text-decoration: underline;
+      text-decoration-color: rgba(0, 68, 204, 0.3);
+      text-underline-offset: 3px;
+    }
+
+    .contacts-row a:hover {
+      color: #d94000;
+    }
+
+    .about-text {
+      font-size: 16.5px;
+      line-height: 26px;
+      color: #333;
+      margin: 0 0 36px 0;
+    }
+
+    .resume-section h2 {
+      font-size: 26px;
+      font-weight: 700;
+      color: #777;
+      letter-spacing: -0.015em;
+      margin: 48px 0 18px 0;
+    }
+
+    .job-item, .edu-item {
+      margin-bottom: 32px;
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-bottom: 4px;
+    }
+
+    .resume-section h3 {
+      font-size: 19px;
+      font-weight: 700;
+      margin: 0;
+      color: #000;
+    }
+
+    .job-company {
+      font-size: 15px;
+      font-weight: 600;
+      color: #444;
+      margin-bottom: 6px;
+    }
+
+    .company-desc {
+      font-size: 14.5px;
+      color: #555;
+      line-height: 1.5;
+      margin: 0 0 12px 0;
+    }
+
+    .job-dates {
+      font-size: 14px;
+      color: #888;
+      font-weight: normal;
+    }
+
+    .resume-section ul {
+      margin: 8px 0 0 0;
+      padding-left: 20px;
+    }
+
+    .resume-section li {
+      font-size: 15.5px;
+      line-height: 24px;
+      color: #222;
+      margin-bottom: 12px;
+    }
+
+    .resume-section li:last-child {
+      margin-bottom: 0;
+    }
+
+    .edu-meta {
+      font-size: 15px;
+      color: #555;
+      margin-bottom: 6px;
+    }
+
+    .edu-desc {
+      font-size: 14.5px;
+      color: #666;
+      line-height: 22px;
+      margin: 0;
+    }
+
+    .hobbies-list {
+      list-style: none;
+      padding: 0 !important;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .hobbies-list li {
+      background: #f4f4f5;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 14px;
+      color: #333;
+      margin: 0;
+    }
+
+    /* =========================================
+       РАЗДЕЛИТЕЛЬ СЕКЦИЙ (Тонкая линия)
+       ========================================= */
+    .okko-separator {
+      max-width: 1160px;
+      margin: 60px auto 40px;
+      padding: 0 24px;
+      box-sizing: border-box;
+    }
+
+    .okko-separator::before {
+      content: "";
+      display: block;
+      height: 1px;
+      background: #eaeaea;
+    }
+
+    /* =========================================
+       СЕКЦИЯ ПОРТФОЛИО (Сетка 1160px)
+       ========================================= */
+    .portfolio-section {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 20px 24px 80px;
+      font-family: 'Golos Text', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 17px;
+      line-height: 27px;
+      color: #111;
+    }
+
+    .portfolio-section .header-block {
+      max-width: 860px;
+      margin-bottom: 50px;
+    }
+
+    .portfolio-section .profile-photo {
+      width: 84px;
+      height: 84px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 16px;
+      display: block;
+      background: #eaeaea;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .portfolio-section h1 {
+      font-family: 'Golos Text', -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+      font-weight: 700;
+      font-size: 42px;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin: 0 0 10px 0;
+      color: #000;
+    }
+
+    .portfolio-section h2.subtitle {
+      font-family: 'Golos Text', -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 28px;
+      color: #555;
+      margin: 0 0 28px 0;
+      border-bottom: none;
+      padding-bottom: 0;
+      text-transform: none;
+      letter-spacing: normal;
+    }
+
+    .portfolio-section h2.section-heading {
+      font-family: 'Golos Text', -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+      font-weight: 700;
+      font-size: 26px;
+      line-height: 1.2;
+      margin: 64px 0 24px 0;
+      color: #000;
+      letter-spacing: -0.01em;
+      border-bottom: none;
+      padding-bottom: 0;
+      text-transform: none;
+    }
+
+    .portfolio-section h3.card-title {
+      font-family: 'Golos Text', -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+      font-weight: 700;
+      font-size: 22px;
+      line-height: 28px;
+      margin: 0 0 12px 0;
+      color: #000;
+    }
+
+    .portfolio-section p {
+      margin: 0 0 1em 0;
+    }
+
+    .portfolio-section a {
+      color: #0044cc;
+      text-decoration: underline;
+      text-decoration-color: rgba(0, 68, 204, 0.3);
+      text-underline-offset: 3px;
+      transition: color 0.15s, text-decoration-color 0.15s;
+    }
+
+    .portfolio-section a:hover {
+      color: #d94000;
+      text-decoration-color: rgba(217, 64, 0, 0.4);
+    }
+
+    .intro-arrows {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0 0 0;
+      font-size: 18px;
+      line-height: 27px;
+    }
+
+    .intro-arrows li {
+      margin-bottom: 10px;
+      position: relative;
+      padding-left: 26px;
+    }
+
+    .intro-arrows li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #888;
+      font-weight: normal;
+    }
+
+    .cases-container {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .case-card {
+      border: 1px solid rgba(0, 0, 0, 0.12);
+      border-radius: 20px;
+      padding: 36px 40px;
+      background: #fff;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .case-card:hover {
+      border-color: rgba(0, 0, 0, 0.22);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    }
+
+    .case-card-featured {
+      background: #fafafa;
+      border: 1px solid rgba(0, 0, 0, 0.14);
+      border-radius: 24px;
+      padding: 40px 44px;
+    }
+
+    .featured-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-top: 24px;
+    }
+
+    .cases-grid-two {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .case-bullets {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .case-bullets li {
+      position: relative;
+      padding-left: 26px;
+      margin-bottom: 18px;
+      font-size: 17px;
+      line-height: 25px;
+      color: #222;
+    }
+
+    .case-bullets li:last-child {
+      margin-bottom: 0;
+    }
+
+    .case-bullets li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #777;
+      font-weight: normal;
+    }
+
+    .case-tag {
+      display: inline-block;
+      font-family: 'Golos Text', -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: #777;
+      margin-bottom: 10px;
+    }
+
+    .case-footer-metric {
+      margin-top: 28px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+      font-family: 'Golos Text', -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: #008844;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .skills-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .skill-pill {
+      font-family: 'Golos Text', -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+      font-size: 15px;
+      line-height: 20px;
+      background: #f4f4f5;
+      color: #222;
+      padding: 10px 16px;
+      border-radius: 8px;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .contacts-card {
+      margin-top: 60px;
+      padding: 36px 40px;
+      border: 1px solid rgba(0, 0, 0, 0.12);
+      border-radius: 20px;
+      background: #fafafa;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .contacts-list {
+      display: flex;
+      gap: 24px;
+      font-family: 'Golos Text', -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      flex-wrap: wrap;
+    }
+
+    .contacts-list a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Адаптивность для мобилок */
+    @media (max-width: 860px) {
+      .featured-columns {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .cases-grid-two {
+        grid-template-columns: 1fr;
+      }
+      .case-card, .case-card-featured {
+        padding: 28px 22px;
+      }
+      .contacts-card {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    /* Печать в PDF: печатается ТОЛЬКО резюме */
+    @media print {
+      .resume-section {
+        padding: 0;
+        max-width: 100%;
+      }
+      .okko-separator,
+      .portfolio-section {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =========================================
+       1. СЕКЦИЯ РЕЗЮМЕ
+       ========================================= -->
+  <section class="resume-section" id="resumeSection">
+    
+    <div class="header">
+      <img src="images/avatar.jpg" alt="Владимир Юрченко" class="profile-img">
+      <h1>Владимир Юрченко</h1>
+      <p class="subtitle">Маркетолог</p>
+
+      <div class="contacts-row">
+        <a href="https://t.me/" target="_blank">Telegram</a>
+        <span>•</span>
+        <a href="mailto:">Email</a>
+        <span>•</span>
+        <a href="https://hh.ru/" target="_blank">hh.ru</a>
+      </div>
+    </div>
+
+    <!-- Обо мне (вводный текст) -->
+    <p class="about-text">
+      Маркетолог с продуктовым и аналитическим уклоном. Оцифровываю клиентский путь: умею слушать звонки, вытаскивать скрытые боли и находить точки слива рекламного бюджета. В работе сочетаю строгий фактчекинг и доказательный подход с сильной редактурой в инфостиле.
+    </p>
+
+    <!-- Опыт работы -->
+    <h2>Опыт работы</h2>
+
+    <!-- Авто Молл Белгородский -->
+    <div class="job-item">
+      <div class="job-header">
+        <h3>Младший маркетолог</h3>
+        <span class="job-dates">Июнь 2025 — Ноябрь 2026 (1 год и 6 месяцев)</span>
+      </div>
+      <div class="job-company">Авто Молл Белгородский</div>
+      <p class="company-desc">Крупный региональный автотехцентр и розничный магазин автозапчастей: техобслуживание, диагностика, слесарный и кузовной ремонт легковых и коммерческих автомобилей.</p>
+      <ul>
+        <li><strong>Управление репутацией на Яндекс Картах:</strong> поднял средний рейтинг с <strong>4.4 до 4.7</strong> и вывел компанию на <strong>1-е место в Белгороде среди 172 конкурентов</strong> со статусом «Хорошее место». Написал скрипт обзвона и автоматизировал сборку: плюс 2–3 новых отзыва в день без участия персонала; удалял негатив через модерацию Яндекс Бизнеса.</li>
+        <li><strong>Контент и продажи во Вконтакте:</strong> привлёк <strong>240 000 ₽ выручки без рекламного бюджета</strong> в пиковый месяц против 0 ₽ годом ранее. Заменил шаблонный автопостинг на регулярные живые кейсы из цеха — слесарный и кузовной ремонт — с призывом записываться на диагностику или консультацию.</li>
+        <li><strong>Маркетинговые исследования и аудит воронки:</strong> оцифровал точку потери выручки — доказал, что компания теряет <strong>80–85% входящих клиентов</strong> на этапе первичного звонка. Слушал записи в Битрикс24 и Авито, провёл глубокий анализ 5 ключевых конкурентов города по 20+ критериям: ценообразование, сервис, гарантии и программы лояльности.</li>
+        <li><strong>Продвижение на Авито и посадочные страницы:</strong> удерживал привлечение лидов в рамках <strong>жёсткого лимита без перерасхода бюджета</strong> и обеспечил конверсию мультиканального трафика в Битрикс24. Оптимизировал выдачу и инфографику на Авито, создавал посадочные страницы под китайские и коммерческие автомобили с внедрением поисковых ключей.</li>
+      </ul>
+    </div>
+
+    <!-- Частная практика -->
+    <div class="job-item">
+      <div class="job-header">
+        <h3>Копирайтер и UX-автор</h3>
+        <span class="job-dates">Апрель 2025 — Май 2025 (2 месяца)</span>
+      </div>
+      <div class="job-company">Частная практика</div>
+      <ul>
+        <li><strong>Поисковое продвижение и экспертные статьи:</strong> написал более 15 лонгридов для блогов и интернет-магазинов в сфере медицины и фармацевтики. За счёт фактчекинга по доказательной медицине и грамотной семантики вывел материалы в топ-5 поисковой выдачи Яндекса без закупки платных ссылок.</li>
+        <li><strong>Прототипирование и структура сайтов:</strong> разработал смысловую структуру и прототипы для 4 коммерческих сайтов в сфере B2B и розницы: оптовая продажа силового кабеля, туристическая одежда, грузоперевозки и монтаж натяжных потолков. Выстроил логичный путь клиента от потребности к целевому действию и защитил структуру перед заказчиками без правок.</li>
+        <li><strong>Email-маркетинг в сегменте B2B:</strong> разработал серию рассылок для завода противопожарных дверей: приветственную цепочку для новых партнёров, экспертные письма по нормам пожарной безопасности и акционные спецпредложения. Сформировал канал прямых повторных продаж для застройщиков и монтажных организаций.</li>
+        <li><strong>Презентации и коммерческие предложения:</strong> создавал структуру, тезисы и вёрстку презентаций для B2B-клиентов. Помог малому бизнесу понятно упаковать сложные услуги и коммерческие предложения, что позволило заказчикам успешно закрыть первичные переговоры.</li>
+      </ul>
+    </div>
+
+    <!-- Образование -->
+    <h2>Образование</h2>
+
+    <div class="edu-item">
+      <div class="job-header">
+        <h3>БУКЭП (Белгородский университет кооперации, экономики и права)</h3>
+        <span class="job-dates">2022 — 2027</span>
+      </div>
+      <div class="edu-meta"><strong>Реклама и связи с общественностью</strong> (Высшее, бакалавриат)</div>
+      <p class="edu-desc">Маркетинговые исследования, медиапланирование, расчет рекламных бюджетов, связи с общественностью и выбор каналов продвижения.</p>
+    </div>
+
+    <div class="edu-item">
+      <div class="job-header">
+        <h3>Медицинский колледж НИУ «БелГУ»</h3>
+        <span class="job-dates">2010 — 2014</span>
+      </div>
+      <div class="edu-meta"><strong>Фармация</strong> (Фармацевт)</div>
+      <p class="edu-desc">Профессиональное знание фармации и доказательной медицины, терминология, работа со сложными спецификациями.</p>
+    </div>
+
+    <!-- Интересы -->
+    <h2>Интересы и кругозор</h2>
+    <ul class="hobbies-list">
+      <li>Фотография (съемка в RAW, постобработка)</li>
+      <li>Иммерсивные RPG и симуляторы</li>
+      <li>История Средневековья и Восточной Европы</li>
+      <li>Коллекционирование редкого неофолка</li>
+      <li>ИИ-агенты и автоматизация рабочих процессов</li>
+    </ul>
+
+  </section>
+
+  <!-- =========================================
+       2. БЕСШОВНЫЙ РАЗДЕЛИТЕЛЬ
+       ========================================= -->
+  <div class="okko-separator"></div>
+
+  <!-- =========================================
+       3. СЕКЦИЯ ПОРТФОЛИО (Обычная страница ниже)
+       ========================================= -->
+  <section class="portfolio-section" id="portfolioSection">
+
+    <!-- Шапка и позиционирование -->
+    <div class="header-block">
+      <img src="images/avatar.jpg" alt="Владимир Юрченко" class="profile-photo">
+      <h1>Владимир Юрченко</h1>
+      <h2 class="subtitle">Маркетолог</h2>
+
+      <p style="font-size: 19px; line-height: 29px; margin-bottom: 16px;">
+        Помогаю компаниям выстраивать честный маркетинг: от оцифровки пути клиента до доведения трафика до кассы. 
+        Соединяю аналитику воронки с сильным информационным стилем, вниманием к UX и продуктовой структурой.
+      </p>
+
+      <ul class="intro-arrows">
+        <li>Прослушаю звонки в CRM и найду скрытые точки потери лидов.</li>
+        <li>Автоматизирую сбор отзывов на Яндекс Картах и выведу в топ города.</li>
+        <li>Напишу статьи и контент, который продает через экспертизу, а не через спам скидками.</li>
+        <li>Соберу посадочные страницы и настрою Авито в рамках фиксированного бюджета.</li>
+      </ul>
+    </div>
+
+    <h2 class="section-heading">Кейсы и опыт</h2>
+
+    <div class="cases-container">
+
+      <!-- ГЛАВНАЯ ПЛАШКА: 2 колонки текста внутри -->
+      <div class="case-card case-card-featured">
+        <div class="case-tag">Годовой опыт инхаус</div>
+        <h3 class="card-title" style="font-size: 26px; margin-bottom: 8px;">Авто Молл Белгородский</h3>
+        <p style="color: #666; margin-bottom: 0; font-size: 17px;">
+          Крупный региональный автотехцентр и розничный магазин автозапчастей. Отвечал за локальное продвижение, репутацию, контент и аудит качества обработки входящего трафика.
+        </p>
+
+        <!-- РАЗБИВКА НА ДВЕ КОЛОНКИ ВНУТРИ ПЛАШКИ -->
+        <div class="featured-columns">
+          
+          <!-- Левая колонка -->
+          <div class="column-left">
+            <ul class="case-bullets">
+              <li>
+                <strong>Управление репутацией (Яндекс Карты):</strong> поднял средний рейтинг компании с 4.4 до 4.7. Написал скрипт обзвона и автоматизировал сборку: +2–3 новых отзыва в день без участия персонала. Удалял негатив через модерацию Яндекс Бизнеса. <em>Итог:</em> вывел компанию на 1-е место в Белгороде среди 172 конкурентов и получил награду «Хорошее место».
+              </li>
+              <li>
+                <strong>Контент и продажи во Вконтакте:</strong> заменил шаблонный автопостинг на регулярные живые кейсы из цеха (слесарный и кузовной ремонт). <em>Итог:</em> превратил группу в стабильный канал обращений; в пиковый месяц Вконтакте принёс 240 000 ₽ без рекламного бюджета против 0 ₽ в аналогичный период прошлого года.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Правая колонка -->
+          <div class="column-right">
+            <ul class="case-bullets">
+              <li>
+                <strong>Маркетинговое исследование и аудит воронки:</strong> провёл детальное исследование 5 ключевых конкурентов города по 20+ критериям (ценообразование, программы лояльности, клиентский сервис). Слушал звонки в Битрикс24 и Авито. <em>Итог:</em> доказал, что реклама работает, но компания теряет 80–85% новых клиентов на этапе первичного звонка.
+              </li>
+              <li>
+                <strong>Продвижение на Авито и посадочные страницы:</strong> оптимизировал поисковую выдачу, инфографику и ставки на Авито. Создавал посадочные страницы под ТО китайских и коммерческих авто под трафик с контекста, радио и поиска с внедрением SEO-ключей. <em>Итог:</em> удержал привлечение лидов в рамках жесткого лимита без перерасхода бюджета; обеспечил конверсию в Битрикс24.
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="case-footer-metric">
+          <span>✓ Результат: 1-е место среди 172 конкурентов, 240 000 ₽ без бюджета и оцифрованная воронка</span>
+        </div>
+      </div>
+
+      <!-- 2 КОЛОНКИ: Карточки 1 и 2 -->
+      <div class="cases-grid-two">
+
+        <!-- Карточка: Геосервисы и SERM -->
+        <div class="case-card">
+          <div class="case-tag">SERM & Геомаркетинг</div>
+          <h3 class="card-title">Рост рейтинга с 4.4 до 4.7 на Яндекс Картах</h3>
+
+          <ul class="case-bullets">
+            <li>Изучил жалобы клиентов и оспорил старый нерелевантный негатив через поддержку Яндекса.</li>
+            <li>Разработал сценарий опроса клиентов после посещения сервиса.</li>
+            <li>Внедрил автообзвон роботом сразу после закрытия заказ-наряда.</li>
+            <li><strong>Итог:</strong> автосервис получает по 2–3 новых отзыва в день на автопилоте, подняв рейтинг до 4.7.</li>
+          </ul>
+
+          <div class="case-footer-metric">
+            <span>▲ 4.7 средняя оценка на картах</span>
+          </div>
+        </div>
+
+        <!-- Карточка: ВКонтакте -->
+        <div class="case-card">
+          <div class="case-tag">SMM & Выручка</div>
+          <h3 class="card-title">240 000 ₽ с группы ВК в разгар сезона</h3>
+
+          <ul class="case-bullets">
+            <li>Отказался от агрессивной рекламы в пользу полезного сервисного контента для автомобилистов.</li>
+            <li>Выстроил регулярное напоминание о сезонном обслуживании и частых скрытых поломках.</li>
+            <li>Написал цикл экспертных B2B-статей по оптовым поставкам масел «Татнефть».</li>
+            <li><strong>Итог:</strong> 240 000 ₽ выручки в июле по подтвержденным заказ-нарядам.</li>
+          </ul>
+
+          <div class="case-footer-metric">
+            <span>✓ 240 000 ₽ подтвержденных продаж</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 2 КОЛОНКИ: Карточки 3 и 4 -->
+      <div class="cases-grid-two">
+
+        <!-- Карточка: Аудит воронки -->
+        <div class="case-card">
+          <div class="case-tag">CRM & Аналитика</div>
+          <h3 class="card-title">Аудит пути клиента и звонков в Битрикс24</h3>
+
+          <ul class="case-bullets">
+            <li>Прослушал записи телефонных разговоров в Битрикс24 и на Авито.</li>
+            <li>Оцифровал конверсию: выяснил, что 83% потенциальных клиентов отваливались из-за отсутствия дожима со стороны приемщиков.</li>
+            <li>Выявил технические слепые зоны: рекламные телефоны, работавшие мимо CRM.</li>
+            <li><strong>Итог:</strong> подготовил руководство по исправлению воронки и доработке скриптов.</li>
+          </ul>
+
+          <div class="case-footer-metric">
+            <span>🔍 Нашел точку слива 83% обращений</span>
+          </div>
+        </div>
+
+        <!-- Карточка: Авито и сайт -->
+        <div class="case-card">
+          <div class="case-tag">Классифайды & Web</div>
+          <h3 class="card-title">Авито и посадочные под ТО китайских авто</h3>
+
+          <ul class="case-bullets">
+            <li>Собрал поисковые SEO-ключи под автоуслуги на Авито и оформил инфографику.</li>
+            <li>Удержал привлечение обращений в рамках строгого лимита 25 000 ₽ в месяц.</li>
+            <li>Создал посадочные страницы на официальном сайте под новые марки (Haval, Belgee).</li>
+            <li><strong>Итог:</strong> обеспечил готовые посадочные под контекст и стабильный поток с Авито.</li>
+          </ul>
+
+          <div class="case-footer-metric">
+            <span>⚡ Контроль бюджета и быстрый запуск</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Чем еще могу помочь (Пиллы/теги) -->
+    <h2 class="section-heading">А еще я делаю:</h2>
+    <div class="skills-pills">
+      <div class="skill-pill">Маркетинговые исследования конкурентов</div>
+      <div class="skill-pill">Настройка роботов для сбора отзывов</div>
+      <div class="skill-pill">Аудит звонков и поиск дыр в CRM</div>
+      <div class="skill-pill">SEO-оптимизация описаний для Авито</div>
+      <div class="skill-pill">Информационный стиль и UX-редактура</div>
+      <div class="skill-pill">Создание посадочных страниц (HTML/CSS)</div>
+      <div class="skill-pill">Автоматизация задач через ИИ-агентов</div>
+    </div>
+
+    <!-- Контакты -->
+    <div class="contacts-card">
+      <div>
+        <h3 class="card-title" style="margin-bottom: 6px;">Владимир Юрченко</h3>
+        <p style="font-size: 16px; color: #666; margin: 0;">Белгород • Готов к 100% удаленной работе в агентстве или компании</p>
+      </div>
+      <div class="contacts-list">
+        <a href="#resumeSection" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;"><i class="fa-solid fa-arrow-up"></i> Наверх к резюме</a>
+        <a href="https://t.me/" target="_blank"><i class="fa-brands fa-telegram"></i> @telegram</a>
+        <a href="mailto:"><i class="fa-solid fa-envelope"></i> Email</a>
+        <a href="https://hh.ru/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> hh.ru</a>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- =========================================
+       4. СКРИПТ ПЕРЕХОДА НА ПОРТФОЛИО ПРИ ДОСКРОЛЛЕ
+       ========================================= -->
+  <script>
+    const portSec = document.getElementById('portfolioSection');
+    let redirected = false;
+    let lastScrollY = window.scrollY;
+    let userInitiated = false;
+
+    // Если вернулись назад из портфолио (кнопкой, скроллом вверх или "Назад" в браузере):
+    const cameFromPortfolio = document.referrer.includes('portfolio.html') || window.location.search.includes('from=portfolio');
+    if (cameFromPortfolio) {
+      if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+      }
+      window.scrollTo(0, 0);
+      redirected = true; // блокируем повторный переход
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        setTimeout(() => {
+          redirected = false;
+        }, 1200);
+      }, 30);
+    }
+
+    // Отслеживаем только осознанные действия пользователя (колесо, тач-скролл, клавиши)
+    window.addEventListener('wheel', () => { userInitiated = true; }, { passive: true });
+    window.addEventListener('touchmove', () => { userInitiated = true; }, { passive: true });
+    window.addEventListener('keydown', (e) => {
+      if (['ArrowDown', 'PageDown', 'Space'].includes(e.code)) userInitiated = true;
+    });
+
+    function checkScrollRedirect() {
+      if (redirected || !portSec) return;
+
+      const currentScrollY = window.scrollY;
+      const isScrollingDown = currentScrollY > lastScrollY;
+      lastScrollY = currentScrollY;
+
+      const rect = portSec.getBoundingClientRect();
+
+      // Момент как на скриншоте: шапка портфолио зашла в экран и поднялась к верхней трети (rect.top <= 140px)
+      if (userInitiated && isScrollingDown && rect.top <= 140) {
+        redirected = true;
+        document.body.style.opacity = '0';
+        setTimeout(() => {
+          window.location.href = 'portfolio.html';
+        }, 40);
+      }
+    }
+
+    window.addEventListener('scroll', checkScrollRedirect, { passive: true });
+
+    // Плавный переход по внутренним ссылкам
+    document.querySelectorAll('a[href*="portfolio.html"]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetUrl = link.href;
+        document.body.style.opacity = '0';
+        setTimeout(() => {
+          window.location.href = targetUrl;
+        }, 40);
+      });
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href').slice(1);
+        const target = document.getElementById(targetId);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        } else {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
