@@ -307,9 +307,10 @@
 
     /* Превью слоя с кейсами */
     .case-section {
-      padding-top: 20px;
-      padding-bottom: 140px;
-      cursor: pointer;
+      padding-top: 40px;
+      min-height: 85vh;
+      padding-bottom: 85vh;
+      box-sizing: border-box;
     }
 
     .meta-tags {
@@ -640,7 +641,7 @@
     window.addEventListener('wheel', (e) => {
       userInitiated = true;
 
-      // Вверх в резюме (порог 500px при scrollY <= 0)
+      // Вверх в резюме только на самом верху страницы (порог 500px при scrollY <= 0)
       if (window.scrollY <= 0 && e.deltaY < 0) {
         upScrollAccumulator += Math.abs(e.deltaY);
         clearTimeout(upScrollTimer);
@@ -656,26 +657,27 @@
         return;
       }
 
-      // Вниз в кейсы при прокрутке в районе блока кейсов или внизу страницы
-      const isNearBottom = (window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - 200);
+      // Вниз в кейсы срабатывает ТОЛЬКО когда шапка кейса уже полностью вошла в экран и поднялась в верхнюю зону (rect.top <= 120px)
       const caseSec = document.getElementById('caseSection');
-      const rect = caseSec ? caseSec.getBoundingClientRect() : null;
-      const isCaseVisible = rect && rect.top <= (window.innerHeight * 0.85);
+      if (caseSec && e.deltaY > 0) {
+        const rect = caseSec.getBoundingClientRect();
+        if (rect.top <= 120) {
+          downScrollAccumulator += Math.abs(e.deltaY);
+          clearTimeout(downScrollTimer);
+          downScrollTimer = setTimeout(() => { downScrollAccumulator = 0; }, 500);
 
-      if ((isNearBottom || isCaseVisible) && e.deltaY > 0) {
-        downScrollAccumulator += Math.abs(e.deltaY);
-        clearTimeout(downScrollTimer);
-        downScrollTimer = setTimeout(() => { downScrollAccumulator = 0; }, 500);
-
-        // Буквально один уверенный щелчок колеса мыши вниз
-        if (downScrollAccumulator >= 80) {
+          // Требует осознанного продолжения прокрутки вниз
+          if (downScrollAccumulator >= 120) {
+            downScrollAccumulator = 0;
+            triggerRedirectToCases();
+          }
+        } else {
           downScrollAccumulator = 0;
-          triggerRedirectToCases();
         }
       }
     }, { passive: true });
 
-    // 2. Обычный скролл страницы
+    // 2. Обычный скролл страницы: срабатывает ровно в момент, когда шапка кейса поднялась к верху экрана (rect.top <= 120px)
     window.addEventListener('scroll', () => {
       if (redirected) return;
       const caseSec = document.getElementById('caseSection');
@@ -686,9 +688,9 @@
       lastScrollY = currentScrollY;
 
       const rect = caseSec.getBoundingClientRect();
-      const isAtBottom = (window.innerHeight + currentScrollY) >= (document.documentElement.scrollHeight - 60);
 
-      if (userInitiated && isScrollingDown && (rect.top <= 320 || isAtBottom)) {
+      // Шапка полностью вошла на экран и достигла верхней зоны экрана (как в резюме)
+      if (userInitiated && isScrollingDown && rect.top <= 120) {
         triggerRedirectToCases();
       }
     }, { passive: true });
@@ -696,9 +698,12 @@
     // 3. Тач-скролл на смартфонах
     window.addEventListener('touchmove', () => {
       userInitiated = true;
-      const isAtBottom = (window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - 80);
-      if (isAtBottom) {
-        triggerRedirectToCases();
+      const caseSec = document.getElementById('caseSection');
+      if (caseSec) {
+        const rect = caseSec.getBoundingClientRect();
+        if (rect.top <= 120) {
+          triggerRedirectToCases();
+        }
       }
     }, { passive: true });
 
@@ -706,14 +711,17 @@
     window.addEventListener('keydown', (e) => {
       if (['ArrowDown', 'PageDown', 'Space'].includes(e.code)) {
         userInitiated = true;
-        const isAtBottom = (window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - 80);
-        if (isAtBottom) {
-          triggerRedirectToCases();
+        const caseSec = document.getElementById('caseSection');
+        if (caseSec) {
+          const rect = caseSec.getBoundingClientRect();
+          if (rect.top <= 120) {
+            triggerRedirectToCases();
+          }
         }
       }
     });
 
-    // 5. Клик по превью-блоку или ссылке
+    // 5. Прямой клик по превью-блоку или ссылке на кейс
     document.querySelectorAll('#caseSection, a[href*="case"]').forEach(el => {
       el.addEventListener('click', (e) => {
         if (e.target.tagName === 'A' && e.target.getAttribute('target') === '_blank') return;
