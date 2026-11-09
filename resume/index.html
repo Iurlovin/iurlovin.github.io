@@ -498,12 +498,44 @@
 
     /* Печать в PDF: печатается ТОЛЬКО резюме */
     @media print {
+      @page {
+        size: A4;
+        margin: 14mm 16mm 14mm 16mm;
+      }
+      body {
+        animation: none !important;
+        opacity: 1 !important;
+      }
       .resume-section {
         padding: 0;
         max-width: 100%;
       }
+      .header {
+        margin-bottom: 18px;
+      }
+      .about-text {
+        margin-bottom: 22px;
+        font-size: 15px;
+        line-height: 1.5;
+      }
+      .resume-section h2 {
+        margin: 26px 0 12px 0;
+        break-after: avoid;
+        page-break-after: avoid;
+      }
+      .job-item, .edu-item, .hobbies-list {
+        margin-bottom: 20px;
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+      .resume-section li {
+        margin-bottom: 8px;
+        line-height: 1.48;
+        font-size: 14px;
+      }
       .okko-separator,
-      .portfolio-section {
+      .portfolio-section,
+      .print-hide {
         display: none !important;
       }
     }
@@ -522,13 +554,15 @@
       <p class="subtitle">Маркетолог</p>
 
       <div class="contacts-row">
-        <a href="https://t.me/" target="_blank">Telegram</a>
+        <a href="https://t.me/Iurlovin5493" target="_blank">Telegram</a>
         <span>•</span>
-        <a href="mailto:">Email</a>
+        <a href="https://max.ru/u/f9LHodD0cOLNyot44EYFmJh126181XON1J-u6S2Zb1no027REIATx0e-q04" target="_blank">MAX</a>
         <span>•</span>
-        <a href="https://hh.ru/" target="_blank">hh.ru</a>
+        <a href="mailto:agenorus94@gmail.com">agenorus94@gmail.com</a>
         <span>•</span>
-        <a href="../portfolio/">Портфолио</a>
+        <a href="https://belgorod.hh.ru/resume/bde2bcdeff115b02ac0039ed1f647a35763765" target="_blank">hh.ru</a>
+        <span class="print-hide">•</span>
+        <a href="../portfolio/" class="print-hide">Портфолио</a>
       </div>
     </div>
 
@@ -779,9 +813,10 @@
       </div>
       <div class="contacts-list">
         <a href="#resumeSection" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;"><i class="fa-solid fa-arrow-up"></i> Наверх к резюме</a>
-        <a href="https://t.me/" target="_blank"><i class="fa-brands fa-telegram"></i> @telegram</a>
-        <a href="mailto:"><i class="fa-solid fa-envelope"></i> Email</a>
-        <a href="https://hh.ru/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> hh.ru</a>
+        <a href="https://t.me/Iurlovin5493" target="_blank"><i class="fa-brands fa-telegram"></i> @Iurlovin5493</a>
+        <a href="https://max.ru/u/f9LHodD0cOLNyot44EYFmJh126181XON1J-u6S2Zb1no027REIATx0e-q04" target="_blank"><i class="fa-solid fa-comment-dots"></i> MAX</a>
+        <a href="mailto:agenorus94@gmail.com"><i class="fa-solid fa-envelope"></i> agenorus94@gmail.com</a>
+        <a href="https://belgorod.hh.ru/resume/bde2bcdeff115b02ac0039ed1f647a35763765" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> hh.ru</a>
       </div>
     </div>
 
