@@ -496,6 +496,15 @@
       }
     }
 
+    /* Временно ограничиваем прокрутку до портфолио, пока оно не готово */
+    .resume-section {
+      padding-bottom: 64px;
+    }
+    .okko-separator,
+    .portfolio-section {
+      display: none !important;
+    }
+
     /* Печать в PDF: печатается ТОЛЬКО резюме */
     @media print {
       @page {
@@ -576,8 +585,6 @@
         <a href="mailto:agenorus94@gmail.com">Почта</a>
         <span>•</span>
         <a href="https://belgorod.hh.ru/resume/bde2bcdeff115b02ac0039ed1f647a35763765" target="_blank">Hh</a>
-        <span class="print-hide">•</span>
-        <a href="../portfolio/" class="print-hide">Портфолио</a>
       </div>
     </div>
 
@@ -834,7 +841,7 @@
     <div class="contacts-card">
       <div>
         <h3 class="card-title" style="margin-bottom: 6px;">Владимир Юрченко</h3>
-        <p style="font-size: 16px; color: #666; margin: 0;">Белгород • Готов к 100% удаленной работе в агентстве или компании</p>
+        <p style="font-size: 16px; color: #666; margin: 0;">Белгород • Готов к удаленной работе в агентстве или компании</p>
       </div>
       <div class="contacts-list">
         <a href="#resumeSection" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;"><i class="fa-solid fa-arrow-up"></i> Наверх к резюме</a>
@@ -851,6 +858,7 @@
        4. СКРИПТ ПЕРЕХОДА НА ПОРТФОЛИО ПРИ ДОСКРОЛЛЕ
        ========================================= -->
   <script>
+    const PORTFOLIO_SCROLL_ENABLED = false;
     const portSec = document.getElementById('portfolioSection');
     let redirected = false;
     let lastScrollY = window.scrollY;
@@ -880,7 +888,7 @@
     });
 
     function checkScrollRedirect() {
-      if (redirected || !portSec) return;
+      if (!PORTFOLIO_SCROLL_ENABLED || redirected || !portSec) return;
 
       const currentScrollY = window.scrollY;
       const isScrollingDown = currentScrollY > lastScrollY;
@@ -898,7 +906,9 @@
       }
     }
 
-    window.addEventListener('scroll', checkScrollRedirect, { passive: true });
+    if (PORTFOLIO_SCROLL_ENABLED) {
+      window.addEventListener('scroll', checkScrollRedirect, { passive: true });
+    }
 
     // Плавный переход по внутренним ссылкам
     document.querySelectorAll('a[href*="portfolio"]').forEach(link => {
