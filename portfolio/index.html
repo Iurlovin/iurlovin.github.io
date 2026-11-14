@@ -237,6 +237,28 @@
       margin-top: auto;
     }
 
+    .case-card-wide {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+      gap: 36px;
+      align-items: center;
+      padding: 36px;
+    }
+
+    .case-card-wide .card-title {
+      font-size: 26px;
+      line-height: 1.25;
+    }
+
+    .case-card-wide .case-bullets {
+      margin-top: 16px;
+    }
+
+    .case-card-wide .case-bullets li {
+      font-size: 16px;
+      line-height: 1.55;
+    }
+
     .case-tag {
       font-size: 13px;
       text-transform: uppercase;
@@ -473,6 +495,18 @@
       .case-card-featured-link .card-title {
         font-size: 26px;
       }
+
+      .case-card-wide {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 32px;
+        align-items: start;
+      }
+
+      .case-card-wide .card-title {
+        font-size: 24px;
+      }
+
       .case-preview-metrics {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -609,19 +643,21 @@
       </div>
 
       <!-- Карточка: Авито и Web -->
-      <div class="case-card">
-        <div class="case-tag">Классифайды & Web</div>
-        <h3 class="card-title">Авито и посадочные под контекст для китайских авто</h3>
+      <div class="case-card case-card-wide">
+        <div class="case-card-content">
+          <div class="case-tag">Авито</div>
+          <h3 class="card-title">Авито и посадочные под контекст для китайских авто</h3>
 
-        <ul class="case-bullets">
-          <li>Собрал кластеры SEO-запросов по диагностике и ремонту китайских брендов: Chery, Geely, Haval, Changan, Exeed.</li>
-          <li>Оформил и упаковал продающие объявления в магазин на Авито.</li>
-          <li>Создал быстрые HTML/CSS посадочные страницы под контекстную рекламу без громоздких конструкторов.</li>
-          <li><strong>Итог:</strong> обеспечил готовые посадочные под контекст и стабильный поток с Авито.</li>
-        </ul>
+          <ul class="case-bullets">
+            <li>Собрал кластеры SEO-запросов по диагностике и ремонту китайских брендов: Chery, Geely, Haval, Changan, Exeed.</li>
+            <li>Оформил и упаковал продающие объявления в магазин на Авито.</li>
+            <li>Создал быстрые HTML/CSS посадочные страницы под контекстную рекламу без громоздких конструкторов.</li>
+            <li><strong>Итог:</strong> обеспечил готовые посадочные под контекст и стабильный поток с Авито.</li>
+          </ul>
+        </div>
 
-        <div class="case-footer-metric">
-          <span>⚡ Контроль бюджета и быстрый запуск</span>
+        <div class="case-card-media">
+          <img src="../images/case-avito-result.svg" alt="Заглушка результата кейса: SEO-кластеры по 5 китайским брендам, объявления на Авито и HTML/CSS посадочные">
         </div>
       </div>
 
