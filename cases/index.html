@@ -168,8 +168,34 @@
       font-size: 15px;
     }
 
-    .metrics-table {
-      min-width: 0;
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 16px;
+      margin: 28px 0 8px;
+    }
+
+    .metric-card {
+      background: #fafafa;
+      border: 1px solid #e0e0e0;
+      border-top: 3px solid #111;
+      border-radius: 8px;
+      padding: 22px 20px;
+    }
+
+    .metric-value {
+      font-size: 34px;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      color: #000;
+      margin-bottom: 10px;
+    }
+
+    .metric-label {
+      font-size: 13px;
+      color: #666;
+      line-height: 1.4;
     }
 
     th, td {
@@ -190,10 +216,6 @@
 
     tr:last-child td {
       border-bottom: none;
-    }
-
-    .metrics-table td:first-child {
-      color: #555;
     }
 
     .highlight-box {
@@ -397,33 +419,23 @@
       Мы выстроили систему работы с отзывами для автотехцентра: подняли рейтинг с 4.5 до 4.7, нарастили базу оценок с ~500 до 1 760, получили награду «Хорошее место» и обошли федеральную сеть Fit Service. Сейчас у автосервиса самая крупная база отзывов среди всех конкурентов региона.
     </p>
 
-    <div class="table-wrap">
-      <table class="metrics-table">
-        <thead>
-          <tr>
-            <th>Показатель</th>
-            <th>Значение</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Рейтинг на Яндекс Картах</td>
-            <td><strong>4.5 → 4.7</strong></td>
-          </tr>
-          <tr>
-            <td>Рост базы оценок</td>
-            <td><strong>~500 → 1 760</strong> (×3.5)</td>
-          </tr>
-          <tr>
-            <td>Место среди конкурентов</td>
-            <td><strong>#1 из 172</strong> (16% рынка)</td>
-          </tr>
-          <tr>
-            <td>Новых отзывов за год</td>
-            <td><strong>~610</strong></td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-value">4.5 → 4.7</div>
+        <div class="metric-label">Рейтинг<br>на Яндекс Картах</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">×3.5</div>
+        <div class="metric-label">Рост базы: с ~500<br>до 1 760 оценок</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">#1</div>
+        <div class="metric-label">Место среди 172<br>конкурентов — 16% рынка</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">~610</div>
+        <div class="metric-label">Новых отзывов<br>собрано за год</div>
+      </div>
     </div>
 
     <h2>1. Ситуация на старте</h2>
