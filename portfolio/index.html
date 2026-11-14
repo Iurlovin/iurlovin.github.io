@@ -237,26 +237,39 @@
       margin-top: auto;
     }
 
-    .case-card-wide {
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
-      gap: 36px;
-      align-items: center;
-      padding: 36px;
+    .case-card-hero-stacked {
+      padding: 44px;
+      border-color: #ddd;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
     }
 
-    .case-card-wide .card-title {
-      font-size: 26px;
-      line-height: 1.25;
+    .case-card-hero-stacked .case-card-content {
+      width: 100%;
+      max-width: 720px;
+      margin: 0 auto;
     }
 
-    .case-card-wide .case-bullets {
-      margin-top: 16px;
+    .case-card-hero-stacked .card-title {
+      font-size: 32px;
+      line-height: 1.2;
     }
 
-    .case-card-wide .case-bullets li {
-      font-size: 16px;
+    .case-card-hero-stacked .case-bullets {
+      margin-top: 20px;
+    }
+
+    .case-card-hero-stacked .case-bullets li {
+      font-size: 17px;
       line-height: 1.55;
+      margin-bottom: 12px;
+    }
+
+    .case-card-hero-stacked .case-card-media {
+      margin-top: 32px;
+    }
+
+    .case-card-hero-stacked .case-card-media img {
+      max-width: 720px;
     }
 
     .case-tag {
@@ -496,15 +509,16 @@
         font-size: 26px;
       }
 
-      .case-card-wide {
-        grid-template-columns: 1fr;
-        gap: 24px;
+      .case-card-hero-stacked {
         padding: 32px;
-        align-items: start;
       }
 
-      .case-card-wide .card-title {
-        font-size: 24px;
+      .case-card-hero-stacked .card-title {
+        font-size: 26px;
+      }
+
+      .case-card-hero-stacked .case-card-media {
+        margin-top: 24px;
       }
 
       .case-preview-metrics {
@@ -584,7 +598,7 @@
     <div class="cases-container">
 
       <!-- Карточка: Геосервисы и SERM -->
-      <a class="case-card case-card-featured-link" href="../cases/">
+      <a class="case-card case-card-hero-stacked" href="../cases/">
         <div class="case-card-content">
           <div class="case-tag">SERM & Геомаркетинг • Детальный кейс</div>
           <h3 class="card-title">Рост рейтинга с 4.4 до 4.7 на Яндекс Картах →</h3>
@@ -643,7 +657,7 @@
       </div>
 
       <!-- Карточка: Авито и Web -->
-      <div class="case-card case-card-wide">
+      <div class="case-card case-card-featured-link">
         <div class="case-card-content">
           <div class="case-tag">Авито</div>
           <h3 class="card-title">Авито и посадочные под контекст для китайских авто</h3>
