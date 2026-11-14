@@ -241,35 +241,43 @@
       padding: 44px;
       border-color: #ddd;
       box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
     }
 
     .case-card-hero-stacked .case-card-content {
       width: 100%;
-      max-width: 720px;
-      margin: 0 auto;
     }
 
     .case-card-hero-stacked .card-title {
+      max-width: 900px;
       font-size: 32px;
       line-height: 1.2;
     }
 
     .case-card-hero-stacked .case-bullets {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 40px;
       margin-top: 20px;
+      flex-grow: 0;
     }
 
     .case-card-hero-stacked .case-bullets li {
-      font-size: 17px;
+      font-size: 16px;
       line-height: 1.55;
-      margin-bottom: 12px;
+      margin-bottom: 0;
     }
 
     .case-card-hero-stacked .case-card-media {
-      margin-top: 32px;
+      margin: 32px -44px 0;
     }
 
     .case-card-hero-stacked .case-card-media img {
-      max-width: 720px;
+      width: 100%;
+      max-width: none;
+      border: 0;
+      border-top: 1px solid #e5e5e5;
+      border-radius: 0;
     }
 
     .case-tag {
@@ -517,8 +525,13 @@
         font-size: 26px;
       }
 
+      .case-card-hero-stacked .case-bullets {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
       .case-card-hero-stacked .case-card-media {
-        margin-top: 24px;
+        margin: 24px -32px 0;
       }
 
       .case-preview-metrics {
@@ -604,9 +617,13 @@
           <h3 class="card-title">Рост рейтинга с 4.4 до 4.7 на Яндекс Картах →</h3>
 
           <ul class="case-bullets">
+            <li>На старте: 172 конкурента в радиусе 5 км, ~500 оценок, часть — старый неотвеченный негатив.</li>
             <li>Изучил жалобы клиентов и оспорил старый нерелевантный негатив через поддержку Яндекса.</li>
             <li>Разработал сценарий опроса клиентов после посещения сервиса.</li>
             <li>Внедрил автообзвон роботом сразу после закрытия заказ-наряда.</li>
+            <li>После чистки профиля рейтинг поднялся до 4.6, автосервис получил статус «Хорошее место».</li>
+            <li>База выросла с ~500 до 1 760 оценок; обошли ближайшего конкурента и федеральную сеть Fit Service.</li>
+            <li>Реклама усилилась: 260 983 просмотра карточки, 19 345 звонков и 6 669 маршрутов.</li>
             <li><strong>Итог:</strong> автосервис получает по 2–3 новых отзыва в день на автопилоте, подняв рейтинг до 4.7.</li>
           </ul>
 
