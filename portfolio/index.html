@@ -185,6 +185,36 @@
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
     }
 
+    .case-card-featured-link {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 300px;
+      gap: 32px;
+      align-items: stretch;
+    }
+
+    .case-card-content {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+
+    .case-card-media {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 0;
+    }
+
+    .case-card-media img {
+      display: block;
+      width: 100%;
+      max-width: 420px;
+      height: auto;
+      border: 1px solid #dbe4f5;
+      border-radius: 10px;
+      background: #eef3ff;
+    }
+
     .case-tag {
       font-size: 13px;
       text-transform: uppercase;
@@ -407,7 +437,8 @@
         padding: 40px 18px;
       }
       .case-card-featured .featured-columns,
-      .cases-grid-two {
+      .cases-grid-two,
+      .case-card-featured-link {
         grid-template-columns: 1fr;
       }
       .case-preview-metrics {
@@ -487,20 +518,26 @@
     <div class="cases-container">
 
       <!-- Карточка: Геосервисы и SERM -->
-      <a class="case-card" href="../cases/">
-        <div class="case-tag">SERM & Геомаркетинг • Детальный кейс</div>
-        <h3 class="card-title">Рост рейтинга с 4.4 до 4.7 на Яндекс Картах →</h3>
+      <a class="case-card case-card-featured-link" href="../cases/">
+        <div class="case-card-content">
+          <div class="case-tag">SERM & Геомаркетинг • Детальный кейс</div>
+          <h3 class="card-title">Рост рейтинга с 4.4 до 4.7 на Яндекс Картах →</h3>
 
-        <ul class="case-bullets">
-          <li>Изучил жалобы клиентов и оспорил старый нерелевантный негатив через поддержку Яндекса.</li>
-          <li>Разработал сценарий опроса клиентов после посещения сервиса.</li>
-          <li>Внедрил автообзвон роботом сразу после закрытия заказ-наряда.</li>
-          <li><strong>Итог:</strong> автосервис получает по 2–3 новых отзыва в день на автопилоте, подняв рейтинг до 4.7.</li>
-        </ul>
+          <ul class="case-bullets">
+            <li>Изучил жалобы клиентов и оспорил старый нерелевантный негатив через поддержку Яндекса.</li>
+            <li>Разработал сценарий опроса клиентов после посещения сервиса.</li>
+            <li>Внедрил автообзвон роботом сразу после закрытия заказ-наряда.</li>
+            <li><strong>Итог:</strong> автосервис получает по 2–3 новых отзыва в день на автопилоте, подняв рейтинг до 4.7.</li>
+          </ul>
 
-        <div class="case-footer-metric">
-          <span>▲ 4.7 средняя оценка на картах</span>
-          <span style="font-weight: 600; color: #0044cc;">Смотреть кейс подробно →</span>
+          <div class="case-footer-metric">
+            <span>▲ 4.7 средняя оценка на картах</span>
+            <span style="font-weight: 600; color: #0044cc;">Смотреть кейс подробно →</span>
+          </div>
+        </div>
+
+        <div class="case-card-media">
+          <img src="../images/case-serm-result.svg" alt="Результат кейса: рейтинг 4.7 на Яндекс Картах, 1 место среди 172 конкурентов, 2–3 новых отзыва в день">
         </div>
       </a>
 

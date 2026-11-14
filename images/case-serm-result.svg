@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" role="img" aria-labelledby="caseSermTitle caseSermDesc">
+  <title id="caseSermTitle">Результат кейса: рейтинг 4.7 на Яндекс Картах</title>
+  <desc id="caseSermDesc">Рейтинг вырос до 4.7, автосервис занял первое место среди 172 конкурентов и получает 2–3 новых отзыва в день.</desc>
+
+  <rect width="600" height="450" rx="18" fill="#eef3ff"/>
+  <rect x="24" y="24" width="552" height="402" rx="14" fill="#ffffff" stroke="#dbe4f5"/>
+
+  <text x="48" y="66" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" letter-spacing="2" fill="#8a94a6">ЯНДЕКС КАРТЫ</text>
+
+  <circle cx="520" cy="88" r="26" fill="#eef3ff"/>
+  <path d="M520 103c-8-9-13-15-13-21a13 13 0 1 1 26 0c0 6-5 12-13 21z" fill="#0044cc"/>
+  <circle cx="520" cy="81" r="5" fill="#ffffff"/>
+
+  <text x="48" y="178" font-family="Arial, Helvetica, sans-serif" font-size="110" font-weight="700" fill="#111111">4.7</text>
+  <text x="292" y="172" font-family="Arial, Helvetica, sans-serif" font-size="62" fill="#f5c518">★</text>
+  <text x="48" y="212" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#667085">рейтинг</text>
+
+  <line x1="48" y1="242" x2="552" y2="242" stroke="#e6eaf0" stroke-width="1"/>
+
+  <text x="48" y="314" font-family="Arial, Helvetica, sans-serif" font-size="56" font-weight="700" fill="#0044cc">#1</text>
+  <text x="48" y="344" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#555555">из 172 конкурентов</text>
+
+  <text x="320" y="314" font-family="Arial, Helvetica, sans-serif" font-size="56" font-weight="700" fill="#111111">+2–3</text>
+  <text x="320" y="344" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#555555">отзыва в день</text>
+
+  <rect x="48" y="372" width="214" height="34" rx="17" fill="#eef3ff"/>
+  <text x="66" y="394" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#0044cc">★ Хорошее место</text>
+
+  <text x="552" y="404" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#98a2b3">по данным Яндекс Бизнеса</text>
+</svg>
