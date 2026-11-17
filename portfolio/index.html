@@ -343,6 +343,26 @@
       gap: 32px;
     }
 
+    .cases-grid-two .case-card-media-bottom {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      height: auto;
+      overflow: hidden;
+      border-radius: var(--card-radius);
+    }
+
+    .cases-grid-two .case-card-media-bottom img {
+      width: 100%;
+      height: 100%;
+      max-width: none;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .cases-grid-two .case-crm-placeholder-img {
+      object-fit: contain;
+    }
+
     /* Навыки / Теги */
     .skills-pills {
       display: flex;
@@ -633,7 +653,7 @@
           </ul>
 
           <div class="case-card-media case-card-media-bottom">
-            <img src="../images/case-smm-cover-v2.png" alt="Обложка кейса: 240 000 ₽ выручки с группы ВКонтакте">
+            <img src="../images/case-smm-cover-v2.png" alt="Обложка кейса: 240 000 ₽ выручки с группы ВКонтакте" class="case-smm-cover-img">
           </div>
         </div>
 
@@ -650,7 +670,7 @@
           </ul>
 
           <div class="case-card-media case-card-media-bottom">
-            <img src="../images/case-crm-result.svg" alt="Заглушка результата кейса по клиентской базе: 300+ обращений в Битрикс24 и 83% потерь на этапе звонка">
+            <img src="../images/case-crm-result.svg" alt="Заглушка результата кейса по клиентской базе: 300+ обращений в Битрикс24 и 83% потерь на этапе звонка" class="case-crm-placeholder-img">
           </div>
         </div>
 
