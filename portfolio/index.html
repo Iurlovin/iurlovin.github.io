@@ -16,33 +16,31 @@
 
     body {
       margin: 0;
-      padding: 60px 24px;
+      padding: 72px 24px 96px;
       background: #ffffff;
       color: #111111;
       font-family: 'Golos Text', -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-      font-size: 17px;
-      line-height: 1.65;
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
 
     .page {
-      width: min(1160px, 100%);
+      max-width: 640px;
       margin: 0 auto;
-    }
-
-    .page > * {
-      max-width: 620px;
     }
 
     h1 {
       margin: 0 0 4px;
-      font-size: 28px;
-      line-height: 1.2;
+      font-size: 22px;
+      line-height: 1.25;
       font-weight: 600;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.015em;
     }
 
     .role {
-      margin: 0 0 20px;
+      margin: 0 0 28px;
+      font-size: 14px;
       color: #666666;
     }
 
@@ -51,26 +49,34 @@
     }
 
     h2 {
-      margin: 40px 0 12px;
+      margin: 48px 0 16px;
       font-size: 12px;
       font-weight: 600;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: #888888;
+      color: #666666;
     }
 
     p {
       margin: 0 0 16px;
     }
 
-    ul {
-      margin: 0;
-      padding: 0;
-      list-style: none;
+    .case-row {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 24px;
+      margin-bottom: 20px;
+      font-variant-numeric: tabular-nums;
     }
 
-    li {
-      margin: 0 0 16px;
+    .case-label {
+      font-size: 14px;
+      color: #666666;
+      line-height: 1.6;
+    }
+
+    .case-body {
+      margin: 0;
     }
 
     a {
@@ -79,14 +85,23 @@
       text-underline-offset: 3px;
     }
 
-    @media (max-width: 720px) {
+    @media (max-width: 600px) {
       body {
-        padding: 40px 20px;
+        padding: 40px 20px 64px;
       }
 
-      .page {
-        width: 100%;
-        margin: 0;
+      h2 {
+        margin-top: 40px;
+      }
+
+      .case-row {
+        grid-template-columns: 1fr;
+        gap: 2px;
+        margin-bottom: 24px;
+      }
+
+      .case-label {
+        font-size: 13px;
       }
     }
   </style>
@@ -100,12 +115,22 @@
 
     <section>
       <h2>Кейсы</h2>
-      <ul>
-        <li><strong>Рост рейтинга автосервиса на Яндекс Картах.</strong> 4.4 → 4.7, #1 из 172 конкурентов, 1 760 оценок, +2–3 отзыва в день.</li>
-        <li><strong>240 000 ₽ выручки с группы ВК за июль.</strong> Без рекламного бюджета, на сервисном контенте и сезонных напоминаниях.</li>
-        <li><strong>Аудит воронки в Битрикс24.</strong> 300+ обращений, 83% потерь на звонках, регламент обработки и перераспределения очереди.</li>
-        <li><strong>Авито и посадочные под контекст.</strong> 5 китайских брендов, бюджет 25 000 ₽/мес, SEO-кластеры, 0 конструкторов.</li>
-      </ul>
+      <div class="case-row">
+        <div class="case-label">Яндекс Карты</div>
+        <p class="case-body"><strong>Рост рейтинга автосервиса.</strong> 4.4 → 4.7, #1 из 172 конкурентов, 1 760 оценок, +2–3 отзыва в день.</p>
+      </div>
+      <div class="case-row">
+        <div class="case-label">ВКонтакте</div>
+        <p class="case-body"><strong>240 000 ₽ выручки с группы за июль.</strong> Без рекламного бюджета, на сервисном контенте и сезонных напоминаниях.</p>
+      </div>
+      <div class="case-row">
+        <div class="case-label">Битрикс24</div>
+        <p class="case-body"><strong>Аудит воронки.</strong> 300+ обращений, 83% потерь на звонках, регламент обработки и перераспределения очереди.</p>
+      </div>
+      <div class="case-row">
+        <div class="case-label">Авито</div>
+        <p class="case-body"><strong>Посадочные под контекст.</strong> 5 китайских брендов, бюджет 25 000 ₽/мес, SEO-кластеры, 0 конструкторов.</p>
+      </div>
     </section>
 
     <section>
