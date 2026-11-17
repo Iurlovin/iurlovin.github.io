@@ -49,7 +49,7 @@
     }
 
     h2 {
-      margin: 48px 0 16px;
+      margin: 48px 0 20px;
       font-size: 16px;
       font-weight: 600;
       color: #111111;
@@ -59,29 +59,35 @@
       margin: 0 0 16px;
     }
 
-    .case-row {
+    .cases {
       display: grid;
-      grid-template-columns: 120px 1fr;
-      gap: 24px;
-      margin-bottom: 20px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px 24px;
       font-variant-numeric: tabular-nums;
     }
 
-    .case-label {
-      font-size: 14px;
-      color: #666666;
-      line-height: 1.6;
+    .case {
+      font-size: 16px;
+      line-height: 1.4;
     }
 
-    .case-body {
-      margin: 0;
-      justify-self: start;
+    .case-meta {
+      margin-top: 4px;
+      font-size: 14px;
+      line-height: 1.4;
+      color: #666666;
     }
 
     a {
       color: #111111;
       text-decoration: underline;
       text-underline-offset: 3px;
+    }
+
+    @media (max-width: 760px) {
+      .cases {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
     @media (max-width: 600px) {
@@ -92,15 +98,12 @@
       h2 {
         margin-top: 40px;
       }
+    }
 
-      .case-row {
+    @media (max-width: 480px) {
+      .cases {
         grid-template-columns: 1fr;
-        gap: 2px;
-        margin-bottom: 24px;
-      }
-
-      .case-label {
-        font-size: 13px;
+        gap: 20px;
       }
     }
   </style>
@@ -114,21 +117,23 @@
 
     <section>
       <h2>Кейсы</h2>
-      <div class="case-row">
-        <div class="case-label">Яндекс Карты</div>
-        <a class="case-body" href="../yandex_maps/">Рост рейтинга автосервиса</a>
-      </div>
-      <div class="case-row">
-        <div class="case-label">ВКонтакте</div>
-        <a class="case-body" href="../vk/">240 000 ₽ выручки с группы за июль</a>
-      </div>
-      <div class="case-row">
-        <div class="case-label">Битрикс24</div>
-        <a class="case-body" href="../bitrix24/">Аудит воронки</a>
-      </div>
-      <div class="case-row">
-        <div class="case-label">Авито</div>
-        <a class="case-body" href="../avito/">Посадочные под контекст</a>
+      <div class="cases">
+        <div class="case">
+          <a href="../yandex_maps/">Рост рейтинга автосервиса</a>
+          <div class="case-meta">SERM</div>
+        </div>
+        <div class="case">
+          <a href="../vk/">240 000 ₽ выручки с группы за июль</a>
+          <div class="case-meta">SMM</div>
+        </div>
+        <div class="case">
+          <a href="../bitrix24/">Аудит воронки</a>
+          <div class="case-meta">CRM</div>
+        </div>
+        <div class="case">
+          <a href="../avito/">Посадочные под контекст</a>
+          <div class="case-meta">SEO</div>
+        </div>
       </div>
     </section>
 
