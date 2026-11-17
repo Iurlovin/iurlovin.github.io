@@ -367,6 +367,144 @@
       box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
     }
 
+    .case-metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .case-metric {
+      background: #f8f9fa;
+      border: 1px solid #eaeaea;
+      border-radius: 10px;
+      padding: 18px 16px;
+    }
+
+    .case-metric strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 30px;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      color: #111;
+    }
+
+    .case-metric span {
+      display: block;
+      font-size: 13px;
+      line-height: 1.35;
+      color: #666;
+    }
+
+    .case-metrics-avito {
+      grid-template-columns: repeat(2, 1fr);
+      margin-top: 0;
+    }
+
+    .case-chat {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .cases-grid-two .case-chat,
+    .cases-grid-two .case-funnel {
+      margin-top: auto;
+    }
+
+    .chat-bubble {
+      max-width: 88%;
+      padding: 12px 14px;
+      border-radius: 14px;
+      font-size: 15px;
+      line-height: 1.45;
+    }
+
+    .chat-left {
+      align-self: flex-start;
+      background: #fff;
+      border: 1px solid #e5e5e5;
+      color: #222;
+      border-bottom-left-radius: 4px;
+    }
+
+    .chat-right {
+      align-self: flex-end;
+      background: #eef3ff;
+      border: 1px solid #dbe4f5;
+      color: #111;
+      border-bottom-right-radius: 4px;
+    }
+
+    .chat-label {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #999;
+    }
+
+    .case-chat-result {
+      margin-top: 6px;
+      background: #111;
+      color: #fff;
+      border-radius: 10px;
+      padding: 12px 14px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .case-funnel {
+      margin-top: 24px;
+      background: #f8f9fa;
+      border: 1px solid #eaeaea;
+      border-radius: 14px;
+      padding: 18px 16px;
+    }
+
+    .funnel-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 9px 0;
+      border-bottom: 1px solid #eaeaea;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .funnel-row:last-of-type {
+      border-bottom: 0;
+    }
+
+    .funnel-row strong {
+      font-size: 24px;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      color: #111;
+    }
+
+    .funnel-danger strong {
+      color: #c0392b;
+    }
+
+    .funnel-note {
+      margin-top: 8px;
+      font-size: 12px;
+      line-height: 1.4;
+      color: #777;
+    }
+
+    @media (max-width: 640px) {
+      .case-metrics {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
     /* Навыки / Теги */
     .skills-pills {
       display: flex;
@@ -636,8 +774,23 @@
 
         </div>
 
-        <div class="case-card-media">
-          <img src="../images/case-serm-cover.png" alt="Обложка кейса: рост рейтинга автосервиса на Яндекс Картах с 4.4 до 4.7">
+        <div class="case-metrics">
+          <div class="case-metric">
+            <strong>4.7</strong>
+            <span>рейтинг на Яндекс Картах</span>
+          </div>
+          <div class="case-metric">
+            <strong>#1</strong>
+            <span>из 172 конкурентов</span>
+          </div>
+          <div class="case-metric">
+            <strong>1 760</strong>
+            <span>оценок в базе</span>
+          </div>
+          <div class="case-metric">
+            <strong>2–3</strong>
+            <span>новых отзыва в день</span>
+          </div>
         </div>
       </a>
 
@@ -656,8 +809,20 @@
             <li><strong>Итог:</strong> 240 000 ₽ выручки в июле по подтверждённым заказ-нарядам.</li>
           </ul>
 
-          <div class="case-card-media case-card-media-bottom">
-            <img src="../images/case-smm-cover-v5.png" alt="Обложка кейса: 240 000 ₽ выручки с группы ВКонтакте" class="case-smm-cover-img">
+          <div class="case-chat">
+            <div class="chat-bubble chat-left">
+              <span class="chat-label">Клиент</span>
+              Вопрос по сезонному обслуживанию
+            </div>
+            <div class="chat-bubble chat-right">
+              <span class="chat-label">Ответ</span>
+              Полезный разбор и приглашение на диагностику
+            </div>
+            <div class="chat-bubble chat-left">
+              <span class="chat-label">Результат</span>
+              Запись на сервис
+            </div>
+            <div class="case-chat-result">240 000 ₽ выручки за июль</div>
           </div>
         </div>
 
@@ -673,8 +838,20 @@
             <li><strong>Итог:</strong> ликвидированы потери в повторных заказах и допродажах деталей.</li>
           </ul>
 
-          <div class="case-card-media case-card-media-bottom">
-            <img src="../images/case-crm-result.svg" alt="Заглушка результата кейса по клиентской базе: 300+ обращений в Битрикс24 и 83% потерь на этапе звонка" class="case-crm-placeholder-img">
+          <div class="case-funnel">
+            <div class="funnel-row">
+              <span>Обращения</span>
+              <strong>300+</strong>
+            </div>
+            <div class="funnel-row">
+              <span>Дошли до записи</span>
+              <strong>17%</strong>
+            </div>
+            <div class="funnel-row funnel-danger">
+              <span>Потери</span>
+              <strong>83%</strong>
+            </div>
+            <div class="funnel-note">Основная зона потерь — обработка звонка</div>
           </div>
         </div>
 
@@ -694,8 +871,23 @@
           </ul>
         </div>
 
-        <div class="case-card-media">
-          <img src="../images/case-avito-result.svg" alt="Заглушка результата кейса: поисковые кластеры по 5 китайским брендам, объявления на Авито и вёрстка посадочных">
+        <div class="case-metrics case-metrics-avito">
+          <div class="case-metric">
+            <strong>5</strong>
+            <span>брендов</span>
+          </div>
+          <div class="case-metric">
+            <strong>25 000 ₽</strong>
+            <span>бюджет Авито</span>
+          </div>
+          <div class="case-metric">
+            <strong>SEO</strong>
+            <span>кластеры запросов</span>
+          </div>
+          <div class="case-metric">
+            <strong>0</strong>
+            <span>конструкторов</span>
+          </div>
         </div>
       </div>
 
